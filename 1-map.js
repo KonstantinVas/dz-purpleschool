@@ -10,7 +10,7 @@ const uniqueArray = [];
 arr.map(function (element) {
     // Проверяем, есть ли уже объект с такими же свойствами в новом массиве
     if (!uniqueArray.find(item => item.id === element.id && item.name === element.name)) {
-        uniqueArray.push(element);
+        return uniqueArray.push(element);
     }
 });
 
