@@ -26,7 +26,7 @@ function checkBirthdayUser(birthday) {
             }
         }
     }
-    return 'Вам больше или 14 лет';
+    return true;
 }
 
 console.log(checkBirthdayUser('2010-03-08'))
