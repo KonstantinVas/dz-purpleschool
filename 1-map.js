@@ -1,18 +1,12 @@
 'use strict';
 const arr = [
-    { id: 1, name: 'Вася' },
-    { id: 2, name: 'Петя' },
-    { id: 1, name: 'Вася' }
+  { id: 1, name: 'Вася' },
+  { id: 2, name: 'Петя' },
+  { id: 1, name: 'Вася' }
 ];
 
-const uniqueArray = [];
+const uniqueArray = new Set(
+  arr.map(index => arr.find(object => object.id === index.id))
+);
 
-arr.map(function (element) {
-    // Проверяем, есть ли уже объект с такими же свойствами в новом массиве
-    if (!uniqueArray.find(item => item.id === element.id && item.name === element.name)) {
-        uniqueArray.push(element);
-    }
-});
-
-const uniqueSet = new Set(uniqueArray);
-console.log(uniqueSet);
+console.log(uniqueArray);
